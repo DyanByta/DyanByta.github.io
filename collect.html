@@ -16,9 +16,9 @@
 <div class="blog-masthead">
     <div class="container">
         <nav class="blog-nav">
-            <a class="blog-nav-item active" href="#">主页</a>
+            <a class="blog-nav-item" href="index.html">主页</a>
             <a class="blog-nav-item" href="blog.html">博客</a>
-            <a class="blog-nav-item" href="collect.html">收藏</a>
+            <a class="blog-nav-item active" href="#">收藏</a>
             <a class="blog-nav-item" href="laboratory.html">实验场</a>
             <a class="blog-nav-item" href="help.html">帮助</a>
         </nav>
@@ -27,42 +27,22 @@
 
 <div class="container">
     <div class="blog-header">
-        <h1 class="blog-title">博客模板</h1>
-        <p class="lead blog-description">这只是个Demo，目前就这样先凑活着吧</p>
+        <h1 class="blog-title"></h1>
+        <p class="lead blog-description"></p>
     </div>
     <div class="row">
 
         <div class="col-sm-8 blog-main">
             <div class="blog-post">
-                <h2 class="blog-post-title">最近在做的事儿</h2>
+                <h2 class="blog-post-title">Python繁简转化库——opencc的安装与使用</h2>
                 <p class="blog-post-meta">三月 27, 2019 by <a href="#" target="_blank" rel="noopener">DyanByta</a></p>
-                <p>这下边是条分割线。</p>
-                <hr>
-                <p>这下边是个注释。</p>
-                <blockquote>
-                    <p>我就是注释。</p>
-                </blockquote>
-                <p>不废话了，正文开始。</p>
-                <h2>这是正文标题</h2>
-                <p>这是引言。</p>
-                <h3>第一章</h3>
-                <p>随便写点代码。</p>
-                <pre><code>print("Hallow World!")</code></pre>
-                <p>上边这是python3.</p>
-                <h3>第二章</h3>
-                <p>先来罗列个清单。</p>
-                <ul>
-                    <li>首先。</li>
-                    <li>然后。</li>
-                    <li>完了。</li>
-                </ul>
-                <p>接着来点一二三。</p>
-                <ol>
-                    <li>写点什么。</li>
-                    <li>随便写就行。</li>
-                    <li>OK，Over。</li>
-                </ol>
-                <p>一句话总结，就这么个结构，自己组合吧。</p>
+                <p>繁体转简体中文的库，opencc的安装，直接看github原文，安装方式：</p>
+                <pre><code>pip install opencc-python-reimplemented</code></pre>
+                <p>或者把github下载下来用<code>python setup.py install</code>安装。</p>
+                <p>使用时不是直接调用<code>opencc</code>，而是从其中导入<code>OpenCC</code>，实例如下：</p>
+                <pre><code>from opencc import OpenCC<br/>openCC = OpenCC('s2t')  # convert from Simplified Chinese to Traditional Chinese<br/>to_convert = '中文转换'<br/>converted = openCC.convert(to_convert)</code></pre>
+                <p>支持的转换模式有：</p>
+                <pre><code>'hk2s': Traditional Chinese (Hong Kong standard) to Simplified Chinese<br/>'s2hk': Simplified Chinese to Traditional Chinese (Hong Kong standard)<br/>'s2t': Simplified Chinese to Traditional Chinese<br/>'s2tw': Simplified Chinese to Traditional Chinese (Taiwan standard)<br/>'s2twp': Simplified Chinese to Traditional Chinese (Taiwan standard, with phrases)<br/>'t2hk': Traditional Chinese to Traditional Chinese (Hong Kong standard)<br/>'t2s': Traditional Chinese to Simplified Chinese<br/>'t2tw': Traditional Chinese to Traditional Chinese (Taiwan standard)<br/>'tw2s': Traditional Chinese (Taiwan standard) to Simplified Chinese<br/>'tw2sp': Traditional Chinese (Taiwan standard) to Simplified Chinese (with phrases)</code></pre>
             </div>
             <nav>
                 <ul class="pager">
@@ -75,7 +55,7 @@
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
             <div class="sidebar-module sidebar-module-inset">
                 <h4>说明</h4>
-                <p>只是想把收藏的文章跟教程之类的放进来，顺便再写点儿心得什么的。毕竟写了这么久的JS，自己不弄点东西出来总觉得亏了。</p>
+                <p>首先，这东西最近没空搞，只是想把收藏的文章跟教程之类的放进来，顺便再写点儿心得什么的。毕竟写了这么久的JS，自己不弄点东西出来总觉得亏了。</p>
             </div>
             <div class="sidebar-module">
                 <h4>档案馆</h4>
@@ -110,6 +90,5 @@
 
 <script src="js/jQuery v3.3.1.js"></script>
 <script src="js/Bootstrap v3.3.7.js"></script>
-<script src="js/index.js"></script>
 </body>
 </html>
