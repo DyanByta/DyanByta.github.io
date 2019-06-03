@@ -1,0 +1,49 @@
+/*
+ *Created by Dyan at 2019/6/3 20:11
+ */
+
+.func_list{
+    background-color: bisque;
+    padding-top: 10px;
+    float: left;
+    width: 20%;
+
+}
+.func_list ul{
+     padding: 4px;
+     margin-right: 8px;
+     margin-left: 8px;
+     font-size: 18px;
+     background-color: whitesmoke;
+     text-align: center;
+     cursor: pointer;
+ }
+.func_container{
+    background-color: lightblue;
+    float: right;
+    width: 78%;
+    display:flex;/*Flex布局*/
+    display: -webkit-flex; /* Safari */
+    align-items:center;/*指定垂直居中*/
+}
+.func_container textarea{
+    margin: 8px;
+}
+.buttons{
+    width: 60px;
+}
+.buttons button{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    text-align: center;
+    height: 28px;
+    width: 100%
+}
+.active_func{
+    background-color: darksalmon;
+    color: #428bca;
+}
+.text_blank{
+    height: 640px;
+    width: 360px;
+}

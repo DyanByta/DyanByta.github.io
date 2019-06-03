@@ -11,6 +11,7 @@
     <title>我看到你了</title>
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
+    <link href="css/test_func.css" rel="stylesheet">
 </head>
 <body>
 <div class="blog-masthead">
@@ -26,9 +27,20 @@
 </div>
 
 <div class="container">
-    <div class="blog-header">
-        <h1 class="blog-title">实验页面</h1>
-        <p class="lead blog-description">这只是个Demo，目前就这样先凑活着吧</p>
+    <div class="func_list">
+        <ul class="active_func">论文阅读辅助</ul>
+        <ul class="">测试功能</ul>
+        <ul class="">测试功能</ul>
+        <ul class="">测试功能</ul>
+        <ul class="">测试功能</ul>
+    </div>
+    <div class="func_container">
+        <textarea class="text_blank" id="raw_text"></textarea>
+        <div class="buttons">
+            <button id="deal_start">👉👉</button>
+            <button id="clear_text">✘✘✘</button>
+        </div>
+        <textarea class="text_blank" id="rul_text"></textarea>
     </div>
 </div>
 
@@ -41,5 +53,6 @@
 
 <script src="js/jQuery v3.3.1.js"></script>
 <script src="js/Bootstrap v3.3.7.js"></script>
+<script src="js/test_func.js"></script>
 </body>
 </html>
