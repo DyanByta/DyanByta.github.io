@@ -2,12 +2,16 @@
  *Created by Dyan at 2019/6/3 20:11
  */
 
+.align_center_vertical{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}/*块内元素垂直居中*/
 .func_list{
     background-color: bisque;
     padding-top: 10px;
     float: left;
     width: 20%;
-
 }
 .func_list ul{
      padding: 4px;
@@ -20,14 +24,14 @@
  }
 .func_container{
     background-color: lightblue;
-    float: right;
     width: 78%;
     display:flex;/*Flex布局*/
     display: -webkit-flex; /* Safari */
+    flex-wrap: wrap;/*flex容器设置——自动换行*/
     align-items:center;/*指定垂直居中*/
 }
-.func_container textarea{
-    margin: 8px;
+.func_container > *{
+    margin: 8px;/*所有子元素设置边距*/
 }
 .buttons{
     width: 60px;
@@ -44,6 +48,59 @@
     color: #428bca;
 }
 .text_blank{
-    height: 640px;
-    width: 360px;
+    height: 600px;
+    width: 43.3%;
 }
+#chat_blank{
+    background-color: whitesmoke;
+    height: 520px;
+    width: 100%;
+    overflow-y:scroll;
+    display:flex;/*Flex布局*/
+    display: -webkit-flex; /* Safari */
+    flex-wrap: wrap;/*flex容器设置——自动换行*/
+    align-content: flex-start;/*取消flex平分容器产生的空白，子块紧贴*/
+}
+#text_blank{
+    height: 60px;
+    width: 80%;
+}
+#send_text{
+    height: 60px;
+    width: 16%;
+    background-color: green;
+    color: cornsilk;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+}
+.chat_item{
+    width:88%;
+    font-size: 24px;
+    margin: 8px;
+}
+.chat_left{
+    padding: 8px;
+    background-color: mediumseagreen;
+    float:left;
+}
+.chat_right{
+    padding: 8px;
+    background-color: cyan;
+    float:right;
+}
+.profile{
+    background-color: darkkhaki;
+    margin: 8px;
+    height: 48px;
+    width: 6%;
+}
+.profile > img{
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}/*img等比缩放*/
+.clear{
+    clear:both;
+}/* 清除空白盒子的所有浮动 */
