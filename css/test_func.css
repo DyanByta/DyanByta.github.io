@@ -7,11 +7,43 @@
     justify-content: space-around;
     flex-direction: column;
 }/*块内元素垂直居中*/
+.border_radius{
+    -webkit-border-radius: 8px;/*兼容chrome与safari*/
+    border-radius:         8px;/*设置圆角*/
+}
+#origin_container{
+    /*background-color: whitesmoke;*/
+    height: 600px;
+    margin: 8px;
+    display:flex;/*Flex布局*/
+    display: -webkit-flex; /* Safari */
+    flex-wrap: wrap;/*flex容器设置——自动换行*/
+    align-items:center;/*指定垂直居中*/
+    align-content: flex-start;/*取消flex平分容器产生的空白，子块紧贴*/
+}
+.func_select{
+    margin: 32px;
+    width: 126px;
+    height: 180px;
+    background-color: navajowhite;
+    -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
+    border-radius: 50%   50%  50%  50%  / 60%   60%   40%  40%;
+    cursor: pointer;
+    display: table;/*配合下边的实现文字垂直居中*/
+}
+.func_select span{
+    display: table-cell;/*不可缺*/
+    vertical-align: middle;/*配合上边的实现文字垂直居中*/
+    text-align: center;
+    font-size: 28px;
+    padding: 8px;
+}
 .func_list{
     background-color: bisque;
     padding-top: 10px;
     float: left;
     width: 20%;
+    margin: 8px 8px 0 0;
 }
 .func_list ul{
      padding: 4px;
@@ -22,6 +54,9 @@
      text-align: center;
      cursor: pointer;
  }
+#func_select{
+    background-color: lightsteelblue;
+}
 .func_container{
     background-color: lightblue;
     width: 78%;
@@ -29,9 +64,11 @@
     display: -webkit-flex; /* Safari */
     flex-wrap: wrap;/*flex容器设置——自动换行*/
     align-items:center;/*指定垂直居中*/
+    padding: 0 8px 8px 0;
+    margin: 8px 0;
 }
 .func_container > *{
-    margin: 8px;/*所有子元素设置边距*/
+    margin: 8px 0 0 8px;/*所有子元素设置边距*/
 }
 .buttons{
     width: 60px;
@@ -40,8 +77,8 @@
     margin-top: 4px;
     margin-bottom: 4px;
     text-align: center;
-    height: 28px;
-    width: 100%
+    height: 48px;
+    width: 100%;
 }
 .active_func{
     background-color: darksalmon;
@@ -49,11 +86,13 @@
 }
 .text_blank{
     height: 600px;
-    width: 43.3%;
+    width: 44.4%;
 }
 #chat_blank{
-    background-color: whitesmoke;
-    height: 520px;
+    background-image: url(../image/背景.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 540px;
     width: 100%;
     overflow-y:scroll;
     display:flex;/*Flex布局*/
@@ -67,7 +106,7 @@
 }
 #send_text{
     height: 60px;
-    width: 16%;
+    width: 18%;
     background-color: green;
     color: cornsilk;
     font-size: 24px;
@@ -81,19 +120,43 @@
 }
 .chat_left{
     padding: 8px;
-    background-color: mediumseagreen;
+    background-color: cornsilk;
     float:left;
+    position: relative;
+}
+.chat_left:before{
+    content:"";
+    position: absolute;
+    right: 100%;
+    top: 19px;
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-right: 14px solid cornsilk;
+    border-bottom: 7px solid transparent;
 }
 .chat_right{
     padding: 8px;
-    background-color: cyan;
+    background-color: lightgreen;
     float:right;
+    position: relative;
+}
+.chat_right:before{
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 19px;
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-left: 14px solid lightgreen;
+    border-bottom: 7px solid transparent;
 }
 .profile{
     background-color: darkkhaki;
     margin: 8px;
     height: 48px;
-    width: 6%;
+    width: 48px;
 }
 .profile > img{
     width: auto;
@@ -101,6 +164,3 @@
     max-width: 100%;
     max-height: 100%;
 }/*img等比缩放*/
-.clear{
-    clear:both;
-}/* 清除空白盒子的所有浮动 */
