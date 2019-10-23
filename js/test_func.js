@@ -25,13 +25,14 @@ $(document).ready(function () {
             "    <button id=\"deal_start\">👉👉</button>\n" +
             "    <button id=\"clear_text\">✘✘✘</button>\n" +
             "</div>\n" +
-            "<textarea class=\"text_blank\" id=\"rul_text\" placeholder=\"点击👉👉获取处理后的文本\n点击✘✘✘清除输入文本\" disabled></textarea>"
+            "<textarea class=\"text_blank\" id=\"rul_text\" placeholder=\"点击👉👉获取处理后的文本\n点击✘✘✘清除输入文本\"></textarea>"
         );
         document.getElementById("raw_text").focus();
         //论文阅读辅助——换行转换
         $("#deal_start").on("click", function () {
-            text = $("#raw_text").val();
-            $("#rul_text").val(text.replace(/\n/g, " ")).select();
+            // document.execCommand("paste");
+
+            $("#rul_text").val($("#raw_text").val().replace(/\n/g, " ")).select();
             document.execCommand("copy");
         });
         //论文阅读辅助——清空输入输出栏
@@ -100,7 +101,7 @@ $(document).ready(function () {
             if(!e.shiftKey && keyCode === 13){
                 chart_write();
             }
-        })
+        });
     }
     function test(){
         alert("开发中……");
